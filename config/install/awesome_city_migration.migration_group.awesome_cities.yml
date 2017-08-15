@@ -1,0 +1,11 @@
+id: awesome_cities
+label: Awesome cities imports
+description: Migration group for importing awesome cities from various sources
+source_type: JSON and MongoDB
+shared_configuration:
+  source:
+    key: default
+dependencies:
+  enforced:
+    module:
+      - awesome_city_migration

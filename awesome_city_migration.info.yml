@@ -1,0 +1,8 @@
+name: Awesome City Migration
+type: module
+description: 'Awesome city migration.'
+package: Migration
+core: 8.x
+dependencies:
+  - migrate_plus:migrate_plus
+  - awesome_city

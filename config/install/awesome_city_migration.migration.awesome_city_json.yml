@@ -1,0 +1,46 @@
+id: awesome_city_json
+label: JSON feed of awesome cities
+migration_group: awesome_cities
+source:
+  plugin: url
+  data_fetcher_plugin: file
+  data_parser_plugin: json
+  urls: /sites/default/files/cities.json
+  item_selector: position
+  fields:
+    -
+      name: id
+      label: 'Unique position identifier'
+      selector: _id
+    -
+      name: name
+      label: 'Awesome city name'
+      selector: city
+    -
+      name: location
+      label: 'Geo-code of the awesome city'
+      selector: loc
+    -
+      name: population
+      label: 'Population of the awesome city'
+      selector: pop
+    -
+      name: state
+      label: 'State of the awesome city'
+      selector: state
+  ids:
+    id:
+      type: integer
+process:
+  id: id
+  name: name
+  location: location
+  population: population
+  state: state
+destination:
+  plugin: entity:awesome_city
+migration_dependencies: {}
+dependencies:
+  enforced:
+    module:
+      - awesome_city_migration
