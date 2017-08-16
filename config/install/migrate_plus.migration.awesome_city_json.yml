@@ -6,7 +6,6 @@ source:
   data_fetcher_plugin: file
   data_parser_plugin: json
   urls: /var/www/html/8/sites/default/files/cities.json
-  item_selector: position
   fields:
     -
       name: id
