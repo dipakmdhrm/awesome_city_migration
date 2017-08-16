@@ -1,0 +1,7 @@
+awesome_city_migration.json_migration_admin_form:
+  path: 'awesome_city_migration/settings/json'
+  defaults:
+    _form: '\Drupal\awesome_city_migration\Form\JsonMigrationAdminForm'
+    _title: 'JsonMigrationAdminForm'
+  requirements:
+    _access: 'TRUE'
