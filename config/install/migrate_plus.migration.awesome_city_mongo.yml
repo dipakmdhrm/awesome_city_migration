@@ -1,0 +1,29 @@
+id: awesome_city_mongo
+label: JSON feed of awesome cities
+migration_group: awesome_cities
+source:
+  plugin: awesome_mongo
+  database: cities
+  collection: cities
+  fields:
+    _id: Primary ID
+    city: Name of the city
+    loc: Geo Code of the city
+    pop: Population of the city
+    state: State of the city
+  key:
+    _id:
+      type: integer
+process:
+  id: _id
+  name: city
+  location: loc
+  population: pop
+  state: state
+destination:
+  plugin: entity:awesome_city
+migration_dependencies: {}
+dependencies:
+  enforced:
+    module:
+      - awesome_city_migration
